@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+{% include 'flash_messages.html' %}
+<div class="property">
+
+
+<div class="">
+	<div class="grid-item2">
+        <div class="image">
+		<img src="{{ url_for('get_image', filename=property.photo)}}" style="width:100%; height:100%;"/>
+        </div>
+        <div class="grid-group">
+        <h4>{{ property.title}}</h4>
+        <div class="grid-group2">
+            <p class="price">${{ property.price }}</p>
+            <p class="type">{{ property.type }}</p>
+        </div>
+        <p>{{ property.description}}</p>
+        <div class="grid-group2">
+            <p class="location"><i class="fa fa-bed"> {{ property.rooms }} Bedrooms</i></p>
+            <p class="location"><i class="fa fa-bath"> {{ property.bathrooms }} Bathrooms</i></p>
+        </div>
+		<p class="location"><i class="fa fa-map-marker"> {{ property.location }}</i></p>
+		<a href=""><input type="button" class="rview" value="Email Realtor"/></a>
+        </div>
+	</div>
+</div>
+</div>
+
+{% endblock %}
